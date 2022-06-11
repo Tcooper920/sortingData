@@ -16,7 +16,7 @@ const employeeListContainer = document.getElementById("employee-list-container")
 const printEmployeesToPage = () => {
 	employeeList.employees.forEach(element => {
 		const newDiv = document.createElement("div");
-		newDiv.innerText = `Name: ${element.name} Email: ${element.email}`;
+		newDiv.innerHTML = `<p><strong>Name:</strong> ${element.name}<br><strong>Email:</strong> ${element.email}<p>`;
 		employeeListContainer.append(newDiv);
 	});
 }
