@@ -24,31 +24,28 @@ const alphabeticalByNameRadioButton = document.getElementById("alphabetical-name
 const alphabeticalByEmailRadioButton = document.getElementById("alphabetical-email");
 
 // Print employees to page
-const printEmployeesToPage = () => {
+const printEmployeesToPage = (employeeListArray) => {
     employeeListContainer.innerHTML = "";
-	employeeList.employees.forEach(element => {
+	employeeListArray.forEach((element) => {
 		const newDiv = document.createElement("div");
 		newDiv.innerHTML = `<p><strong>Name:</strong> ${element.name}<br><strong>Email:</strong> ${element.email}<p>`;
 		employeeListContainer.append(newDiv);
 	});
 }
 
-printEmployeesToPage();
+printEmployeesToPage(employeeList.employees);
 
 // Filter by search bar value and print to page
 searchBar.addEventListener("keyup", (e) => {
     employeeListContainer.innerHTML = "";
     const searchString = e.target.value;
-    const filterData = employeeList.employees.filter((employee) => {
+    const filteredData = employeeList.employees.filter((employee) => {
         return (
             employee.name.toLowerCase().includes(searchString.toLowerCase()) || 
             employee.email.toLowerCase().includes(searchString.toLowerCase())
-        );
-    }).forEach((result) => {
-        const newDiv = document.createElement("div");
-		newDiv.innerHTML = `<p><strong>Name:</strong> ${result.name}<br><strong>Email:</strong> ${result.email}<p>`;
-		employeeListContainer.append(newDiv);
+        )
     });
+    printEmployeesToPage(filteredData);
 });
 
 // Sort Alphabetically by Name
@@ -60,7 +57,7 @@ alphabeticalByNameRadioButton.addEventListener("click", () => {
             let employeeNameB = b.name.toUpperCase();
             return (employeeNameA < employeeNameB ) ? -1 : (employeeNameA > employeeNameB) ? 1 : 0;
         }); 
-        printEmployeesToPage();
+        printEmployeesToPage(employeeList.employees);
     }
 });
 
@@ -73,6 +70,6 @@ alphabeticalByEmailRadioButton.addEventListener("click", () => {
             let employeeEmailB = b.email.toUpperCase();
             return (employeeEmailA < employeeEmailB ) ? -1 : (employeeEmailA > employeeEmailB) ? 1 : 0;
         });
-        printEmployeesToPage();
+        printEmployeesToPage(employeeList.employees);
     }
 });
