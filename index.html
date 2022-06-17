@@ -6,18 +6,27 @@
 </head>
 <body>
 
-<form>
-	<input type="text" placeholder="Search" id="search-bar">
-</form>
+<main>
+	<form>
+		<input type="text" placeholder="Search" id="search-bar">
+	</form>
 
-<form>
-	<input type="radio" id="alphabetical-name" name="alphabetical" value="alphabetical-name">
-	<label for="alphabetical-name">Sort alphabetical by Name</label><br>
-	<input type="radio" id="alphabetical-email" name="alphabetical" value="alphabetical-email">
-	<label for="alphabetical-email">Sort alphabetical by Email</label><br>
-</form>
+	<form>
+		<input type="radio" id="alphabetical-name" name="alphabetical" value="alphabetical-name">
+		<label for="alphabetical-name">Alphabetical by Name</label><br>
+		<input type="radio" id="alphabetical-email" name="alphabetical" value="alphabetical-email">
+		<label for="alphabetical-email">Alphabetical by Email</label><br><br>
+		<p>Filter by service:</p>
+		<input type="radio" id="bathroom" name="service" value="Bathroom">
+		<label for="bathroom">Bathroom</label><br>
+		<input type="radio" id="hvac" name="service" value="HVAC">
+		<label for="hvac">HVAC</label><br>
+		<input type="radio" id="kitchen" name="service" value="Kitchen">
+		<label for="kitchen">Kitchen</label><br>
+	</form>
 
-<div id="employee-list-container"></div>
+	<div id="employee-list-container"></div>
+</main>
 
 <script type="text/javascript" src="index.js"></script>
 </body>
