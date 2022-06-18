@@ -38,6 +38,7 @@ const employeeList =
     {"name":"Welker McKee", "email":"WM@gmail.com", "service":"Bathroom, HVAC, Kitchen"},
 ]};
 
+// Variables
 const employeeListContainer = document.getElementById("employee-list-container");
 const searchBar = document.getElementById("search-bar");
 const alphabeticalByNameRadioButton = document.getElementById("alphabetical-name");
@@ -48,9 +49,9 @@ const printEmployeesToPage = (employeeListArray) => {
     employeeListContainer.innerHTML = "";
 	employeeListArray.forEach((element) => {
 		const newDiv = document.createElement("div");
-		newDiv.innerHTML = `<p class="employee-container"><strong>Name:</strong> ${element.name}<br>
-                            <strong>Email:</strong> ${element.email}<br>
-                            <strong>Services Provided:</strong> ${element.service}<p>`;
+		newDiv.innerHTML = `<p class="employee-container"><strong class="container-labels">Name:</strong> ${element.name}<br>
+                            <strong class="container-labels">Email:</strong> ${element.email}<br>
+                            <strong class="container-labels">Services Provided:</strong> ${element.service}<p>`;
 		employeeListContainer.append(newDiv);
 	});
 }

@@ -4,6 +4,63 @@
     border: none;
 }
 
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 1.3rem;
+    margin-bottom: .5rem;
+}
+
+p {
+    margin-bottom: .5rem;
+}
+
+strong {
+    font-weight: bold;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Outfit', sans-serif;
+    color: #58595b;
+    font-size: 1rem;;
+}
+
+main {
+    padding: 2rem;
+}
+
+.search-bar {
+    background-color: gainsboro;
+    margin-bottom: 1rem;
+    padding: .8rem;
+    border-radius: .4rem;
+    width: 20rem;
+    max-width: 20rem;
+}
+
+#employee-list-container {
+    max-width: 40rem;
+    margin-top: 1.5rem;
+    padding: 2rem;
+    background-color: #3c515a;
+    border-radius: .4rem;
+}
+
 .employee-container {
-    margin: 1rem;
+    margin-bottom: 1rem;
+}
+
+.employee-container {
+    background-color: white;
+    padding: 1rem;
+    border-radius: .4rem;
+    border-left: .2rem solid #ff671d;
+}
+
+.container-labels {
+    color: #ff671d;
 }
