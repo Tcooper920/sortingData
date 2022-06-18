@@ -1,7 +1,11 @@
 <DOCTYPE! html>
 <html>
 <head>
-	<title></title>
+	<title>Find a Local Service</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&family=Outfit:wght@400;600&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="index.css">
 </head>
 <body>
@@ -9,21 +13,21 @@
 <main>
 	<h1>Find a local service</h1>
 	<form>
-		<input type="text" placeholder="Search" id="search-bar">
+		<input type="text" placeholder="Search" class="search-bar" id="search-bar">
 	</form>
 
 	<form>
-		<input type="radio" id="alphabetical-name" name="filter-sort" value="alphabetical-name">
+		<p><input type="radio" id="alphabetical-name" name="filter-sort" value="alphabetical-name">
 		<label for="alphabetical-name">All PCs Alphabetical by Name</label><br>
 		<input type="radio" id="alphabetical-email" name="filter-sort" value="alphabetical-email">
-		<label for="alphabetical-email">All PCs Alphabetical by Email</label><br>
-		<p>Filter by service:</p>
-		<input type="radio" class="service" id="bathroom" name="filter-sort" value="Bathroom">
+		<label for="alphabetical-email">All PCs Alphabetical by Email</label></p>
+		<h2>Filter by service:</h2>
+		<p><input type="radio" class="service" id="bathroom" name="filter-sort" value="Bathroom">
 		<label for="bathroom">Bathroom</label><br>
 		<input type="radio" class="service" id="hvac" name="filter-sort" value="HVAC">
 		<label for="hvac">HVAC</label><br>
 		<input type="radio" class="service" id="kitchen" name="filter-sort" value="Kitchen">
-		<label for="kitchen">Kitchen</label><br>
+		<label for="kitchen">Kitchen</label></p>
 	</form>
 
 	<div id="employee-list-container"></div>
