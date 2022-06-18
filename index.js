@@ -58,7 +58,7 @@ const printEmployeesToPage = (employeeListArray) => {
 
 printEmployeesToPage(employeeList.employees);
 
-// Filter by search bar value and print to page
+// Filter by search bar value and print to page (in alphabetical order by name)
 searchBar.addEventListener("keyup", (e) => {
     employeeListContainer.innerHTML = "";
     const searchString = e.target.value;
@@ -67,7 +67,11 @@ searchBar.addEventListener("keyup", (e) => {
             employee.name.toLowerCase().includes(searchString.toLowerCase()) || 
             employee.email.toLowerCase().includes(searchString.toLowerCase())
         )
-    });
+    }).sort((a, b) => {
+        let employeeNameA = a.name.toUpperCase();
+        let employeeNameB = b.name.toUpperCase();
+        return (employeeNameA < employeeNameB ) ? -1 : (employeeNameA > employeeNameB) ? 1 : 0;
+    }); 
     printEmployeesToPage(filteredData);
 });
 
@@ -97,7 +101,7 @@ alphabeticalByEmailRadioButton.addEventListener("click", () => {
     }
 });
 
-// Filter by Service
+// Filter by Service (in alphabetical order by name)
 document.addEventListener("click", (e) => {
     if (e.target.classList.contains("service")) {
         employeeListContainer.innerHTML = "";
@@ -106,7 +110,11 @@ document.addEventListener("click", (e) => {
             return (
                 employee.service.includes(searchString)
             )
-        });
+        }).sort((a, b) => {
+            let employeeNameA = a.name.toUpperCase();
+            let employeeNameB = b.name.toUpperCase();
+            return (employeeNameA < employeeNameB ) ? -1 : (employeeNameA > employeeNameB) ? 1 : 0;
+        }); 
         printEmployeesToPage(filteredByServiceData);
     }
 });
