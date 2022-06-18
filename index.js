@@ -1,28 +1,47 @@
-// "Database" of employees
+// "Database" of employees (Profit Centers)
 const employeeList = 
 {"employees":[  
-    {"name":"Shyam", "email":"shyamjaiswal@gmail.com", "service":"Bathroom, HVAC, Kitchen"},  
-    {"name":"Bob", "email":"bob32@gmail.com", "service":"Bathroom, HVAC, Kitchen"},  
-    {"name":"Jai", "email":"jai87@gmail.com", "service":"Bathroom, Kitchen"},
-    {"name":"Thomas", "email":"thomas@gmail.com", "service":"Bathroom, HVAC, Kitchen"},
-    {"name":"Matt", "email":"matt@gmail.com", "service":"Bathroom, HVAC, Kitchen"},
-    {"name":"Justin", "email":"justin79@gmail.com", "service":"Bathroom"},
-    {"name":"Mac", "email":"mac12@gmail.com", "service":"Bathroom"},
-    {"name":"Katie", "email":"C-katie@gmail.com", "service":"Bathroom"},
-    {"name":"Rich", "email":"rich70@gmail.com", "service":"Bathroom"},  
-    {"name":"Aaron", "email":"Baaron@gmail.com", "service":"Bathroom"}, 
-    {"name":"Charlie", "email":"charlie@gmail.com", "service":"HVAC, Kitchen"}, 
-    {"name":"Zack", "email":"Azack21@gmail.com", "service":"HVAC, Kitchen"}, 
-    {"name":"Timmy", "email":"Timmy@gmail.com", "service":"Kitchen"}, 
-    {"name":"Jessica", "email":"jess@gmail.com", "service":"HVAC, Kitchen"}, 
-    {"name":"Tim", "email":"Timmy@gmail.com", "service":"Kitchen"}, 
+    {"name":"Able", "email":"Able@gmail.com", "service":"Bathroom"}, 
+    {"name":"AllTex", "email":"Tex@gmail.com", "service":"Bathroom, HVAC, Kitchen"},  
+    {"name":"Apex", "email":"Apex@gmail.com", "service":"Bathroom, HVAC, Kitchen"},  
+    {"name":"The Bath Showcase", "email":"BathShowcase@gmail.com", "service":"Bathroom, HVAC, Kitchen"},  
+    {"name":"Blodgett Supply", "email":"Blodgett@gmail.com", "service":"Bathroom, Kitchen"},  
+    {"name":"Center State", "email":"CenterState@gmail.com", "service":"Bathroom, HVAC, Kitchen"},  
+    {"name":"Conestoga", "email":"Conestoga@gmail.com", "service":"HVAC, Kitchen"},  
+    {"name":"Covenant Plumbing Supply", "email":"Covenant@gmail.com", "service":"Bathroom, Kitchen"},  
+    {"name":"Cowan", "email":"Cowan@gmail.com", "service":"Bathroom, HVAC, Kitchen"},  
+    {"name":"Dahl", "email":"Dahl@gmail.com", "service":"Bathroom, HVAC, Kitchen"},  
+    {"name":"Decker", "email":"Decker@gmail.com", "service":"Bathroom, HVAC, Kitchen"},  
+    {"name":"EPSCO", "email":"EPSCO@gmail.com", "service":"HVAC, Kitchen"},  
+    {"name":"European", "email":"European@gmail.com", "service":"Bathroom, HVAC, Kitchen"},  
+    {"name":"Facets", "email":"Facets@gmail.com", "service":"Bathroom, HVAC, Kitchen"},  
+    {"name":"GPS", "email":"Gloucester@gmail.com", "service":"Bathroom, HVAC, Kitchen"},  
+    {"name":"Gorman Company", "email":"Gorman@gmail.com", "service":"Bathroom, HVAC"},  
+    {"name":"Gorman Co.", "email":"GormanCo@gmail.com", "service":"Bathroom, HVAC, Kitchen"},  
+    {"name":"H2O Kitchen & Bath", "email":"H2O@gmail.com", "service":"Bathroom, HVAC, Kitchen"},  
+    {"name":"Hajoca", "email":"Hajoca@gmail.com", "service":"Bathroom, HVAC, Kitchen"},  
+    {"name":"Heieck Supply", "email":"Heieck@gmail.com", "service":"Bathroom, HVAC, Kitchen"},   
+    {"name":"HJC", "email":"HainesJonesCadbury@gmail.com", "service":"Bathroom, HVAC, Kitchen"},  
+    {"name":"Hughes", "email":"Hughes@gmail.com", "service":"Bathroom, HVAC, Kitchen"},  
+    {"name":"Inland Supply", "email":"Inland@gmail.com", "service":"Bathroom, HVAC, Kitchen"},  
+    {"name":"Modern Supply", "email":"MS@gmail.com", "service":"HVAC, Kitchen"},
+    {"name":"NB", "email":"NewBritain@gmail.com", "service":"Bathroom, HVAC, Kitchen"},  
+    {"name":"Penstan", "email":"Penstan@gmail.com", "service":"Bathroom, HVAC, Kitchen"},  
+    {"name":"Penstan HVAC", "email":"PHVAC@gmail.com", "service":"HVAC"},  
+    {"name":"RAM", "email":"RAM@gmail.com", "service":"Bathroom, HVAC, Kitchen"},  
+    {"name":"Richards", "email":"Richards@gmail.com", "service":"Bathroom, HVAC, Kitchen"},
+    {"name":"Rohaco", "email":"Rohaco@gmail.com", "service":"Bathroom, HVAC, Kitchen"},
+    {"name":"Sandale", "email":"Sandale@gmail.com", "service":"Bathroom, HVAC, Kitchen"},
+    {"name":"Solutions", "email":"Solutions@gmail.com", "service":"Bathroom, HVAC, Kitchen"},
+    {"name":"Weinstein", "email":"Wein@gmail.com", "service":"Bathroom, HVAC, Kitchen"},
+    {"name":"Weinstein Supply", "email":"WSupply@gmail.com", "service":"Bathroom, HVAC"},
+    {"name":"Welker McKee", "email":"WM@gmail.com", "service":"Bathroom, HVAC, Kitchen"},
 ]};
 
 const employeeListContainer = document.getElementById("employee-list-container");
 const searchBar = document.getElementById("search-bar");
 const alphabeticalByNameRadioButton = document.getElementById("alphabetical-name");
 const alphabeticalByEmailRadioButton = document.getElementById("alphabetical-email");
-const serviceRadioButton = document.getElementsByClassName("service");
 
 // Print employees to page
 const printEmployeesToPage = (employeeListArray) => {
@@ -79,7 +98,7 @@ alphabeticalByEmailRadioButton.addEventListener("click", () => {
 
 // Filter by Service
 document.addEventListener("click", (e) => {
-    if (e.target.name === "service") {
+    if (e.target.classList.contains("service")) {
         employeeListContainer.innerHTML = "";
         const searchString = e.target.value;
         const filteredByServiceData = employeeList.employees.filter((employee) => {

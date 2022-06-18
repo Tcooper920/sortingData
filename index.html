@@ -7,21 +7,22 @@
 <body>
 
 <main>
+	<h1>Find a local service</h1>
 	<form>
 		<input type="text" placeholder="Search" id="search-bar">
 	</form>
 
 	<form>
-		<input type="radio" id="alphabetical-name" name="alphabetical" value="alphabetical-name">
-		<label for="alphabetical-name">Alphabetical by Name</label><br>
-		<input type="radio" id="alphabetical-email" name="alphabetical" value="alphabetical-email">
-		<label for="alphabetical-email">Alphabetical by Email</label><br><br>
+		<input type="radio" id="alphabetical-name" name="filter-sort" value="alphabetical-name">
+		<label for="alphabetical-name">All PCs Alphabetical by Name</label><br>
+		<input type="radio" id="alphabetical-email" name="filter-sort" value="alphabetical-email">
+		<label for="alphabetical-email">All PCs Alphabetical by Email</label><br>
 		<p>Filter by service:</p>
-		<input type="radio" id="bathroom" name="service" value="Bathroom">
+		<input type="radio" class="service" id="bathroom" name="filter-sort" value="Bathroom">
 		<label for="bathroom">Bathroom</label><br>
-		<input type="radio" id="hvac" name="service" value="HVAC">
+		<input type="radio" class="service" id="hvac" name="filter-sort" value="HVAC">
 		<label for="hvac">HVAC</label><br>
-		<input type="radio" id="kitchen" name="service" value="Kitchen">
+		<input type="radio" class="service" id="kitchen" name="filter-sort" value="Kitchen">
 		<label for="kitchen">Kitchen</label><br>
 	</form>
 
