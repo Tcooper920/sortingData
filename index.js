@@ -61,7 +61,6 @@ printEmployeesToPage(employeeList.employees);
 
 // Filter by search bar value and print to page (in alphabetical order by name)
 searchBar.addEventListener("keyup", (e) => {
-    employeeListContainer.innerHTML = "";
     const searchString = e.target.value;
     const filteredData = employeeList.employees.filter((employee) => {
         return (
@@ -105,7 +104,6 @@ alphabeticalByEmailRadioButton.addEventListener("click", () => {
 // Filter by Service (in alphabetical order by name)
 document.addEventListener("click", (e) => {
     if (e.target.classList.contains("service")) {
-        employeeListContainer.innerHTML = "";
         const searchString = e.target.value;
         const filteredByServiceData = employeeList.employees.filter((employee) => {
             return (
