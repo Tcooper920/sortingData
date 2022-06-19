@@ -11,23 +11,25 @@
 <body>
 
 <main>
-	<h1>Find a local service</h1>
+	<h1>Find a local Hajoca branch:</h1>
 	<form>
 		<input type="text" placeholder="Search" class="search-bar" id="search-bar">
 	</form>
 
 	<form>
 		<p><input type="radio" id="alphabetical-name" name="filter-sort" value="alphabetical-name">
-		<label for="alphabetical-name">All PCs Alphabetical by Name</label><br>
+		<label for="alphabetical-name">Sort all branches alphabetically by <em>name</em></label><br>
 		<input type="radio" id="alphabetical-email" name="filter-sort" value="alphabetical-email">
-		<label for="alphabetical-email">All PCs Alphabetical by Email</label></p>
+		<label for="alphabetical-email">Sort all branches alphabetically by <em>email</em></label></p>
 		<h2>Filter by service:</h2>
 		<p><input type="radio" class="service" id="bathroom" name="filter-sort" value="Bathroom">
 		<label for="bathroom">Bathroom</label><br>
 		<input type="radio" class="service" id="hvac" name="filter-sort" value="HVAC">
 		<label for="hvac">HVAC</label><br>
 		<input type="radio" class="service" id="kitchen" name="filter-sort" value="Kitchen">
-		<label for="kitchen">Kitchen</label></p>
+		<label for="kitchen">Kitchen</label><br>
+		<input type="radio" class="service" id="showroom" name="filter-sort" value="Showroom">
+		<label for="showroom">Showroom</label></p>
 	</form>
 
 	<div id="employee-list-container"></div>
