@@ -1,16 +1,16 @@
 // "Database" of employees (Profit Centers)
 const employeeList = 
 {"employees":[  
-    {"name":"Able", "email":"Able@gmail.com", "service":"Bathroom,", "website":"www.able.com"}, 
+    {"name":"Able", "email":"Able@gmail.com", "service":"Showroom", "website":"www.able.com"}, 
     {"name":"AllTex", "email":"Tex@gmail.com", "service":"Bathroom, HVAC, Kitchen", "website":"www.AllTex.com"},  
     {"name":"Apex", "email":"Apex@gmail.com", "service":"Bathroom, HVAC, Kitchen", "website":"www.apex.com"},  
     {"name":"The Bath Showcase", "email":"BathShowcase@gmail.com", "service":"Bathroom, HVAC, Kitchen", "website":"www.bathshowcase.net"},  
     {"name":"Blodgett Supply", "email":"Blodgett@gmail.com", "service":"Bathroom, Kitchen", "website":"www.blodgettsupply.com"},  
-    {"name":"Center State", "email":"CenterState@gmail.com", "service":"Bathroom, HVAC, Kitchen", "website":"www.centerstate.com"},  
+    {"name":"Center State", "email":"CenterState@gmail.com", "service":"HVAC", "website":"www.centerstate.com"},  
     {"name":"Conestoga", "email":"Conestoga@gmail.com", "service":"HVAC, Kitchen", "website":"www.conestoga.net"},  
     {"name":"Covenant Plumbing Supply", "email":"Covenant@gmail.com", "service":"Bathroom, Kitchen", "website":"www.covenantsupply.com"},  
     {"name":"Cowan", "email":"Cowan@gmail.com", "service":"Bathroom, HVAC, Kitchen", "website":"www.cowan.com"},  
-    {"name":"Dahl", "email":"Dahl@gmail.com", "service":"Bathroom, HVAC, Kitchen", "website":"www.dahl.com"},  
+    {"name":"Dahl", "email":"Dahl@gmail.com", "service":"Bathroom", "website":"www.dahl.com"},  
     {"name":"Decker", "email":"Decker@gmail.com", "service":"Bathroom, HVAC, Kitchen", "website":"www.decker.com"},  
     {"name":"EPSCO", "email":"EPSCO@gmail.com", "service":"HVAC, Kitchen", "website":"www.epsco.com"},  
     {"name":"European", "email":"European@gmail.com", "service":"Bathroom, HVAC, Kitchen", "website":"www.european.com"},  
@@ -25,15 +25,15 @@ const employeeList =
     {"name":"Hughes", "email":"Hughes@gmail.com", "service":"Bathroom, HVAC, Kitchen", "website":"www.hughes.net"},  
     {"name":"Inland Supply", "email":"Inland@gmail.com", "service":"Bathroom, HVAC, Kitchen", "website":"www.inlandsupply.com"},  
     {"name":"Modern Supply", "email":"MS@gmail.com", "service":"HVAC, Kitchen", "website":"www.ModernSupply.com"},
-    {"name":"NB", "email":"NewBritain@gmail.com", "service":"Bathroom, HVAC, Kitchen", "website":"www.NewBritain.com"},  
-    {"name":"Penstan", "email":"Penstan@gmail.com", "service":"Bathroom, HVAC, Kitchen", "website":"www.Penstan.com"},  
+    {"name":"NB", "email":"NewBritain@gmail.com", "service":"Showroom", "website":"www.NewBritain.com"},  
+    {"name":"Penstan", "email":"Penstan@gmail.com", "service":"Bathroom, HVAC, Kitchen, Showroom", "website":"www.Penstan.com"},  
     {"name":"Penstan HVAC", "email":"PHVAC@gmail.com", "service":"HVAC", "website":"www.PenstanHVAC.com"},  
     {"name":"RAM", "email":"RAM@gmail.com", "service":"Bathroom, HVAC, Kitchen", "website":"www.RAM.com"},  
     {"name":"Richards", "email":"Richards@gmail.com", "service":"Bathroom, HVAC, Kitchen", "website":"www.richards.com"},
     {"name":"Rohaco", "email":"Rohaco@gmail.com", "service":"Bathroom, HVAC, Kitchen", "website":"www.rohaco.net"},
     {"name":"Sandale", "email":"Sandale@gmail.com", "service":"Bathroom, HVAC, Kitchen", "website":"www.Sandale.com"},
     {"name":"Solutions", "email":"Solutions@gmail.com", "service":"Bathroom, HVAC, Kitchen", "website":"www.Solutions.net"},
-    {"name":"Weinstein", "email":"Wein@gmail.com", "service":"Bathroom, HVAC, Kitchen", "website":"www.weinstein.com"},
+    {"name":"Weinstein", "email":"Wein@gmail.com", "service":"Showroom", "website":"www.weinstein.com"},
     {"name":"Weinstein Supply", "email":"WSupply@gmail.com", "service":"Bathroom, HVAC", "website":"www.WeinsteinSupply.com"},
     {"name":"Welker McKee", "email":"WM@gmail.com", "service":"Bathroom, HVAC, Kitchen", "website":"www.WelkerMcKee.com"},
 ]};
@@ -104,6 +104,7 @@ alphabeticalByEmailRadioButton.addEventListener("click", () => {
 // Filter by Service (in alphabetical order by name)
 document.addEventListener("click", (e) => {
     if (e.target.classList.contains("service")) {
+        searchBar.value = "";
         const searchString = e.target.value;
         const filteredByServiceData = employeeList.employees.filter((employee) => {
             return (
